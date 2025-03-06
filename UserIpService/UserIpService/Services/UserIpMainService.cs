@@ -4,11 +4,11 @@ using UserIpService.Models;
 
 namespace UserIpService.Services;
 
-    public class UserIpService : IUserIpService
+    public class UserIpMainService : IUserIpMainService
     {
         private readonly AppDbContext _context;
 
-        public UserIpService(AppDbContext context)
+        public UserIpMainService(AppDbContext context)
         {
             _context = context;
         }

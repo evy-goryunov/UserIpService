@@ -1,6 +1,6 @@
 ﻿namespace UserIpService.Services;
 
-public interface IUserIpService
+public interface IUserIpMainService
 {
     Task AddUserIp(long userId, string ipAddress);
     Task<List<long>> FindUsersByIpPrefix(string ipPrefix);

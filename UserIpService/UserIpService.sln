@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
+VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserIpService", "UserIpService\UserIpService.csproj", "{2952E933-60E3-4EE0-9EBD-A0B2F36C4671}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{2AB309AC-B356-411F-956D-4C3F67172A6E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{2952E933-60E3-4EE0-9EBD-A0B2F36C4671}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2952E933-60E3-4EE0-9EBD-A0B2F36C4671}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2952E933-60E3-4EE0-9EBD-A0B2F36C4671}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AB309AC-B356-411F-956D-4C3F67172A6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AB309AC-B356-411F-956D-4C3F67172A6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AB309AC-B356-411F-956D-4C3F67172A6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AB309AC-B356-411F-956D-4C3F67172A6E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
