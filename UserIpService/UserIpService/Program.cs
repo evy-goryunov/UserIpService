@@ -16,7 +16,7 @@ public class Program
             options.UseNpgsql(connectionString)
                   .UseLazyLoadingProxies());
         
-        builder.Services.AddScoped<IUserIpService, UserIpService.Services.UserIpService>();
+        builder.Services.AddScoped<IUserIpMainService, UserIpService.Services.UserIpMainService>();
 
         // Minimal API
         builder.Services.AddEndpointsApiExplorer();
@@ -38,28 +38,28 @@ public class Program
         }
 
         // Endpoint для добавления UserIp
-        app.MapPost("/users/{userId}/ips", async (long userId, string ipAddress, IUserIpService service) =>
+        app.MapPost("/users/{userId}/ips", async (long userId, string ipAddress, IUserIpMainService service) =>
         {
             await service.AddUserIp(userId, ipAddress);
             return Results.Ok();
         });
 
         // Endpoint для поиска пользователей по IP префиксу
-        app.MapGet("/users/byip/{ipPrefix}", async (string ipPrefix, IUserIpService service) =>
+        app.MapGet("/users/byip/{ipPrefix}", async (string ipPrefix, IUserIpMainService service) =>
         {
             var userIds = await service.FindUsersByIpPrefix(ipPrefix);
             return Results.Ok(userIds);
         });
 
         // Endpoint для получения IP адресов пользователя
-        app.MapGet("/users/{userId}/ips", async (long userId, IUserIpService service) =>
+        app.MapGet("/users/{userId}/ips", async (long userId, IUserIpMainService service) =>
         {
             var ips = await service.GetUserIpAddresses(userId);
             return Results.Ok(ips);
         });
 
         // Endpoint для получения последней связи пользователя и IP
-        app.MapGet("/users/{userId}/lastconnection", async (long userId, IUserIpService service) =>
+        app.MapGet("/users/{userId}/lastconnection", async (long userId, IUserIpMainService service) =>
         {
             var lastConnection = await service.GetLastUserConnection(userId);
             return Results.Ok(lastConnection);
